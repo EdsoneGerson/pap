@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 //verificar se o ficheiro foi submetido
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'];
@@ -8,14 +10,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     //incluir ligação a base de dados
     require_once('inc/Medoo.php');
     //verificar se existe alguma linha com nome, email e password
-    $usuario = $basedados->get("tbutilizadores",
-    "*",
-    [
-        "email" => $email,
-        "password" => $password
-    ]);
-
-    //verificar se dados de acesso estão corretos
+    $usuario = $basedados->get(
+        "tbutilizadores",
+        "*",
+        [
+            "email" => $email,
+            "password" => $password
+        ]
+    );
     if ($usuario) {
         $_SESSION['autenticado'] = true;
         $_SESSION['nomeUtilizador'] = $usuario['nome'];
@@ -23,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         //redireccionar para a página inicial
         header(header: "location: index.php");
     } else {
-        echo "<p>Dados de acesso inválidos!!</p>";
+        echo "<b><p>Dados de acesso inválidos!!</p></b>"; 
     }
 }
 ?>
@@ -36,6 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Gestor</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/login.css">
 </head>
 
 <body>
@@ -62,7 +65,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <label for="password" class="form-label">Senha</label>
                         <input type="password" class="form-control" id="password" name="password" required>
                     </div>
-                    <button type="submit" class="btn btn-primary">Logar</button>
+                    <button type="submit" class="btn btn-outline-dark">Logar</button>                 
+                    <?php  ?>
                 </form>
             </div>
         </section>

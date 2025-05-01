@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -10,7 +12,8 @@ session_start();
     <title>Poupança</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/poupança.css">
+    <link rel="stylesheet" href="css/poupanca.css">
+    <script src="js/poupanca.js"></script>
 </head>
 
 <body>
@@ -19,31 +22,26 @@ session_start();
     <main class="container-fluid">
         <section class="row">
             <!-- não alterar nada acima desta linha -->
-            <script src="js/poupança.js"></script>
             <div class="col-12 text-center mt-4">
-                <h1><b>Calculadora de Poupança Mensal</b></h1>
+                <h1><b>Poupança Mensal</b></h1>
             </div>
         </section>
         <section class="row">
             <div class="col-sm-12 col-lg-10 text-center mx-auto">
                 <div class="container">
-                    <form id="savingsForm">
-                        <label for="currentAmount">Valor acumulado até agora (€):</label>
-                        <input type="number" id="currentAmount" name="currentAmount" required step="0.01" min="0" placeholder="0">
+                    <form id="savingsForm" class="calc_form">
 
-                        <label for="desiredAmount">Montante desejado (€):</label>
-                        <input type="number" id="desiredAmount" name="desiredAmount" required step="0.01" min="0" placeholder="0">
+                        <label for="montante">Montante desejado (€):</label>
+                        <input type="number" id="montante" name="montante" required step="0.01" min="0" placeholder="0">
 
-                        <label for="years">Tempo restante (anos):</label>
-                        <input type="number" id="years" name="years" required step="0.1" min="0.1" placeholder="0">
+                        <label for="anos">Número de meses:</label>
+                        <input type="number" id="meses" name="meses" required step="1" min="1" placeholder="0">
 
-                        <label for="rate">Taxa de rentabilidade anual esperada (%):</label>
-                        <input type="number" id="rate" name="rate" required step="0.01" min="0" placeholder="0">
-
-                        <button type="button" onclick="calculate()">Calcular</button>
+                        <button type="button" class="btn btn-outline-dark" id="calc">Calcular</button>
                     </form>
-                    <div class="result" id="result"></div>
+                    <div class="result" id="poupanca"></div>
                 </div>
+            </div>
         </section>
         <!-- não alterar nada abaixo desta linha -->
     </main>

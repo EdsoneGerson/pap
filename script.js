@@ -130,7 +130,6 @@ document.getElementById('botaoFechar').addEventListener('click', () => {
     }
   });
   
- 
 
   document.getElementById('formEntrada').addEventListener('submit', function(event) {
     if (validacaoPersonalizadaFalhou) {

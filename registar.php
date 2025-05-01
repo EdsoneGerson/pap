@@ -1,5 +1,7 @@
 <?php
-@session_start();
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 
 //auxiliar
 $msg = "";
@@ -11,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = md5($_POST['password']);
 
     //incluir ligação a base de dados
-    require_once('../inc/Medoo.php');
+    require_once('inc/Medoo.php');
 
     //verificar se já existe um utilizador registado com o e-mail digitado no registado
     $emailexistente = $basedados->get(
@@ -44,6 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Gestor</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/login.css">
 </head>
 
 <body>
@@ -76,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <label for="password" class="form-label">Senha</label>
                         <input type="password" class="form-control" id="password" name="password" required>
                     </div>
-                    <button type="submit" class="btn btn-primary">Registar</button>
+                    <button type="submit" class="btn btn-outline-dark">Registar</button>
                 </form>
             </div>
         </section>

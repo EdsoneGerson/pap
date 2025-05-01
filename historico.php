@@ -1,6 +1,14 @@
 <?php
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
+
+    // Verifica se o utilizador está autenticado
+    if (isset($_SESSION["utilizador"])) {
+        header("Location: login.php");
+        exit();
+    }
+
+    $ficheiro_log = "historico.log";
 }
 ?>
 <!DOCTYPE html>
@@ -21,12 +29,20 @@ if (session_status() == PHP_SESSION_NONE) {
         <section class="row">
             <!-- não alterar nada acima desta linha -->
             <div class="col-12 text-center mt-4">
-                <h1><b>Verificação</b></h1>
+                <h1><b>Histórico</b></h1>
             </div>
         </section>
         <section class="row">
             <div class="col-sm-12 col-lg-10 text-center mx-auto">
                 <!-- o conteúdo específico de cada página vem aqui -->
+                <?php if (file_exists($ficheiro_log)) {
+                    $linhas = file($ficheiro_log);
+                    echo "<ul>";
+                    foreach ($linhas as $linha) {
+                        echo "<li>" . htmlspecialchars($linha) . "</li>";
+                    }} else {
+                        echo "Não existe nenhum registo de acesso.";
+                    } ?>
             </div>
         </section>
         <!-- não alterar nada abaixo desta linha -->
@@ -34,5 +50,3 @@ if (session_status() == PHP_SESSION_NONE) {
     <!-- bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
-
-</html>
