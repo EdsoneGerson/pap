@@ -1,3 +1,29 @@
+/* Tema escuro para a navbar */
+.navbar a {
+    color: #000000;
+    text-decoration: none;
+    margin-right: 15px;
+    font-size: 1rem;
+}
+
+.navbar a:hover {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+.navbar.dark-mode {
+    background-color: #343a40 !important;
+    border-color: #454d55;
+}
+
+.navbar.dark-mode .nav-link {
+    color: #f8f9fa !important;
+}
+
+.navbar.dark-mode .nav-link:hover {
+    color: #adb5bd !important;
+}
+
 /* Estilo global */
 body {
     background-color: #f8f9fa;
@@ -5,6 +31,14 @@ body {
     color: #333;
     margin: 0;
     padding: 20px;
+}
+
+/* Tema escuro para o body */
+body.dark-mode {
+    background-color: #212529;
+    /* Fundo escuro */
+    color: #f8f9fa;
+    /* Texto claro */
 }
 
 /* Cabeçalho */
@@ -54,6 +88,19 @@ h1 {
     background-color: #0056b3;
 }
 
+/* Tema escuro para o saldo */
+body.dark-mode .saldo-container {
+    background-color: #343a40;
+    /* Fundo escuro */
+    color: #f8f9fa;
+    /* Texto claro */
+    border: 1px solid #454d55;
+    /* Borda mais escura */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
 /* Botão Criar Transação */
 #botaoAbrir {
     background: #28a745;
@@ -71,6 +118,16 @@ h1 {
     background: #218838;
 }
 
+/* Tema escuro para o botão "Criar Transação" */
+body.dark-mode #botaoAbrir {
+    background-color: #28a745; /* Fundo verde */
+    color: #f8f9fa; /* Texto claro */
+}
+
+body.dark-mode #botaoAbrir:hover {
+    background-color: #218838; /* Fundo verde mais escuro ao passar o mouse */
+}
+
 /* Formulário de entrada */
 #formulario {
     background: white;
@@ -82,7 +139,8 @@ h1 {
     display: none;
 }
 
-#formulario input, #formulario select {
+#formulario input,
+#formulario select {
     width: 100%;
     padding: 8px;
     margin-bottom: 10px;
@@ -98,6 +156,38 @@ h1 {
     margin-top: 10px;
 }
 
+/* Tema escuro para o formulário */
+body.dark-mode #formulario {
+    background-color: #343a40;
+    /* Fundo escuro */
+    color: #f8f9fa;
+    /* Texto claro */
+    border: 1px solid #454d55;
+    /* Borda mais escura */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Tema escuro para os campos do formulário */
+body.dark-mode #formulario input,
+body.dark-mode #formulario select {
+    background-color: #495057;
+    /* Fundo escuro dos campos */
+    color: #f8f9fa;
+    /* Texto claro */
+    border: 1px solid #6c757d;
+    /* Borda mais clara */
+}
+
+body.dark-mode #formulario input:focus,
+body.dark-mode #formulario select:focus {
+    border-color: #adb5bd;
+    /* Cor da borda ao focar */
+    box-shadow: 0 0 4px rgba(173, 181, 189, 0.5);
+    /* Sombra ao focar */
+}
+
 /* Estilo das colunas Crédito e Débito */
 .container {
     display: flex;
@@ -109,10 +199,27 @@ h1 {
     background: white;
     padding: 15px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   
     flex: 1;
     margin: 10px;
     text-align: center;
+}
+
+/* Tema escuro para as colunas */
+body.dark-mode .coluna {
+    background-color: #343a40; /* Fundo escuro */
+    color: #f8f9fa; /* Texto claro */
+
+}
+
+/* Tema escuro para o container */
+body.dark-mode .container {
+    background-color: #343a40; /* Fundo escuro */
+    color: #f8f9fa; /* Texto claro */
+    border: 1px solid #454d55; /* Borda mais escura */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 /* Tabela de histórico de transações */
@@ -130,7 +237,8 @@ h1 {
     margin-top: 10px;
 }
 
-#historico th, #historico td {
+#historico th,
+#historico td {
     padding: 10px;
     border: 1px solid #ddd;
     text-align: left;
@@ -139,6 +247,36 @@ h1 {
 #historico th {
     background: #007bff;
     color: white;
+}
+
+/* Tema escuro para o histórico de transações */
+body.dark-mode #historico {
+    background-color: #343a40;
+    /* Fundo escuro */
+    color: #f8f9fa;
+    /* Texto claro */
+    border: 1px solid #454d55;
+    /* Borda mais escura */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Tema escuro para a tabela */
+body.dark-mode #historico table {
+    background-color: #495057;
+    /* Fundo escuro da tabela */
+    color: #f8f9fa;
+    /* Texto claro */
+    border-collapse: collapse;
+    width: 100%;
+}
+
+body.dark-mode #historico th,
+body.dark-mode #historico td {
+    border: 1px solid #6c757d;
+    /* Borda mais clara */
+    padding: 10px;
+    text-align: left;
 }
 
 /* Atividade recente */
@@ -161,7 +299,8 @@ h1 {
     border-collapse: collapse;
 }
 
-.recent-activity th, .recent-activity td {
+.recent-activity th,
+.recent-activity td {
     padding: 10px;
     text-align: left;
     border-bottom: 1px solid #ddd;
@@ -194,4 +333,74 @@ h1 {
 canvas {
     max-width: 100%;
     height: auto;
+}
+
+/* Tema escuro para o gráfico */
+body.dark-mode #graficoContainer {
+    background-color: #343a40;
+    /* Fundo escuro */
+    color: #f8f9fa;
+    /* Texto claro */
+    border: 1px solid #454d55;
+    /* Borda mais escura */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Estilo padrão para botões */
+button {
+    background-color: #28a745; /* Fundo azul */
+    color: #ffffff; /* Texto branco */
+    padding: 10px 20px; /* Espaçamento interno */
+    border: none; /* Remove bordas padrão */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+    font-size: 16px; /* Tamanho da fonte */
+    transition: background-color 0.3s ease; /* Transição suave */
+}
+
+/* Estilo ao passar o mouse */
+button:hover {
+    background-color: #218838; /* Fundo azul mais escuro */
+}
+
+/* Tema escuro para botões */
+body.dark-mode button {
+    background-color: #28a745; /* Fundo verde */
+    color: #f8f9fa; /* Texto claro */
+}
+
+body.dark-mode button:hover {
+    background-color: #218838; /* Fundo verde mais escuro ao passar o mouse */
+}
+
+/* Estilo para os botões de Reduzir e Fechar */
+button.reduzir,
+button.fechar {
+    background-color: #dc3545; /* Fundo vermelho */
+    color: #ffffff; /* Texto branco */
+    padding: 10px 15px; /* Espaçamento interno */
+    border: none; /* Remove bordas padrão */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+    font-size: 14px; /* Tamanho da fonte */
+    transition: background-color 0.3s ease; /* Transição suave */
+}
+
+/* Estilo ao passar o mouse */
+button.reduzir:hover,
+button.fechar:hover {
+    background-color: #c82333; /* Fundo vermelho mais escuro */
+}
+
+/* Tema escuro para os botões de Reduzir e Fechar */
+body.dark-mode button.reduzir,
+body.dark-mode button.fechar {
+    background-color: #c82333; /* Fundo vermelho mais escuro */
+    color: #f8f9fa; /* Texto claro */
+}
+
+body.dark-mode button.reduzir:hover,
+body.dark-mode button.fechar:hover {
+    background-color: #a71d2a; /* Fundo vermelho ainda mais escuro ao passar o mouse */
 }

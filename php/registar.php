@@ -1,5 +1,5 @@
 <?php
-session_start();
+@session_start();
 
 //auxiliar
 $msg = "";
@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             "tipo" => 2
         ]);
         $msg = "<p style='color: green;'>Conta criada com sucesso!</p>";
-        header(header: "location: ../index.php");
+        header(header: "location: index.php");
     }
 }
 ?>
@@ -62,8 +62,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
         </section>
         <section class="row">
-            <div class="col-sm-12 col-lg-5 mx-auto">
-                <form method="post">
+            <div class="col-sm-12  mx-auto">
+                <form method="post" class="form-box">
                     <div class="mb-3">
                         <label for="nome" class="form-label">Nome</label>
                         <input type="text" class="form-control" id="nome" name="nome" required>

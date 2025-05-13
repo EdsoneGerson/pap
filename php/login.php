@@ -36,16 +36,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Gestor</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/login.css">
-    
 </head>
 
 <body>
     <?php require_once('../inc/menu.php'); ?>
-
     <main class="container-fluid">
         <section class="row">
             <!-- não alterar nada acima desta linha -->
-            <div class="col-12 text-center mt-4 ">
+            <div class="col-12 text-center mt-4">
                 <h1>Login</h1>
             </div>
         </section>
@@ -54,8 +52,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
         </section>
         <section class="row">
-            <div class="col-sm-12 col-lg-5 mx-auto">
-                <form method="post">
+            <div class="col-sm-12 col-lg-12 mx-auto">
+                <form method="post" class="form-box">
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
                         <input type="email" class="form-control" id="email" name="email" required>
@@ -66,6 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </div>
                     <button type="submit" class="btn btn-primary">Logar</button>
                 </form>
+                <p>Não tem uma conta? <a href="registar.php">Crie uma agora</a></p>
             </div>
         </section>
         <!-- não alterar nada abaixo desta linha -->

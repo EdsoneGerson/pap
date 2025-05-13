@@ -144,7 +144,7 @@ if (!isset($_SESSION['autenticado'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Gestor</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/index.css"> <!-- Link para o CSS externo -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Importação do Chart.js -->
 </head>
 
@@ -204,7 +204,7 @@ if (!isset($_SESSION['autenticado'])) {
 
             <!-- Botões -->
             <button type="submit">Concluir</button>
-            <button type="button" id="botaoFechar">Fechar</button> <!-- Botão para fechar -->
+            <button type="button" id="botaoFechar" class="fechar">Fechar</button> <!-- Botão para fechar -->
           </form>
         </div>
 
