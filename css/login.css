@@ -1,0 +1,58 @@
+/*Eslização do titulo*/
+h1 {
+    text-align: center;
+    color: #343a40;
+    margin-bottom: 1.5rem;
+}
+/* Estilização geral */
+body {
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    margin: 0; /* Remove margens padrão */
+    flex-direction: column; /* Garante que o título e outros elementos fiquem empilhados */
+}
+
+/* Estilização do formulário */
+form {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto; /* Centraliza o formulário na tela */
+}
+
+/* Campos de entrada */
+.form-control {
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    padding: 10px;
+}
+
+/* Botão de login */
+.btn-primary {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #007bff;
+    border: none;
+    transition: background 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Altura total da tela */
+    flex-direction: column; /* Garante que os elementos fiquem empilhados */
+}
